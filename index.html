@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiSetu - Revolutionizing Contract Farming</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .prototype{
+            width: 1000px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #00be2f;
+            animation: slideIn 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            animation: fadeInDown 1.2s ease;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: zoomIn 1s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            /* Increased padding for more space */
+            /* Add the path to your background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Parallax effect */
+            color: white;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1.2s ease-out;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            /* Text shadow for readability */
+        }
+
+        .hero p {
+            text-align: center;
+            font-size: 1.2rem;
+            animation: fadeIn 1.8s ease;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            /* Text shadow for readability */
+        }
+
+        .video-demo {
+            margin: 20px auto;
+            width: 80%;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Semi-transparent overlay */
+            color: white;
+            line-height: 400px;
+            font-size: 1.5rem;
+            animation: fadeIn 2s ease;
+        }
+
+        /* Feature Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .feature-box {
+            width: 200px;
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+            animation: zoomIn 1.2s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-box h3 {
+            margin-bottom: 15px;
+            color: #0e910b;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .feature-box p {
+            text-align: center;
+            font-size: 0.9rem;
+            animation: fadeIn 1.6s ease;
+        }
+
+        /* Connecting the train-like boxes */
+        .feature-box:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 50px;
+            height: 4px;
+            background-color: #2980b9;
+            animation: fadeIn 1.8s ease;
+        }
+
+        /* Portal Information Section */
+        .portals {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .portal {
+            width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .portal:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .portal h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #00be2f;
+            animation: fadeInDown 1.6s ease;
+        }
+
+        .portal p {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #555;
+            animation: fadeIn 1.8s ease;
+        }
+
+        .portal button {
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: fadeIn 2s ease;
+        }
+
+        .portal button:hover {
+            background-color: #3498db;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            width: 50%;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .modal-header {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2980b9;
+        }
+
+        .modal-body {
+            margin-bottom: 15px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            animation: slideIn 2s ease-out;
+        }
+
+        footer p {
+            margin: 10px 0;
+            animation: fadeIn 2.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>KrishiSetu</h1>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero"
+    style="background-image: url('https://media.istockphoto.com/id/1317288349/vector/green-fields-landscape-of-farmland-barns-and-farms-rural-houses-and-windmills-vector-pasture.jpg?s=612x612&w=0&k=20&c=4wesx3ngx12mHsNh9ERHeemd7EuLCXrRsbvFUDrL9vc=');">
+
+   <h2>Revolutionizing Contract Farming</h2>
+   <p>Secure, transparent, and efficient contract farming for the modern agricultural economy</p>
+   <iframe width="1351" height="480" src="https://www.youtube.com/embed/uKrle5iGqgo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+
+    <!-- About Section -->
+    <div class="container">
+        <h2>About KrishiSetu</h2><br>
+        <p>
+            KrishiSetu is a next-generation platform designed to transform the landscape of contract farming. By
+            seamlessly connecting farmers, buyers, and companies, KrishiSetu ensures transparency, efficiency, and
+            fairness in agricultural trade. With an emphasis on digital contracts, AI-driven farming recommendations,
+            and direct market access, the platform empowers farmers to get the best deals for their produce while
+            minimizing dependency on middlemen.<br><br>
+
+            KrishiSetu introduces a holistic ecosystem where farmers can not only secure profitable contracts but also
+            gain insights into optimizing their farm yields, pre-sell their crops, access financial assistance, and
+            collaborate with fellow farmers for cooperative farming. The platform also features an e-commerce
+            marketplace where surplus produce can be sold directly to consumers.<br><br>
+
+            Through blockchain-enabled contracts, escrow-backed payments, and smart AI services, KrishiSetu is here to
+            revolutionize the agricultural economy—making farming smarter, safer, and more sustainable for every
+            stakeholder.<br><br>
+            Our vision is simple: empower farmers, strengthen communities, and create a future where agriculture
+            flourishes with innovation at its heart. KrishiSetu is not just a platform; it’s a bridge to a better
+            tomorrow for everyone involved in the agriculture industry.
+
+
+        </p>
+    </div>
+
+    <!-- Feature Section (Train-Like Boxes) -->
+    <div class="container">
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="feature-box">
+                <i class="fa-brands fa-hive"></i>
+                <h3>Blockchain Contracts</h3>
+                <p>Secure, customizable contracts for guaranteed transactions.</p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fa-sharp-duotone fa-solid fa-indian-rupee-sign"></i>
+                <h3>Escrow Payments</h3>
+                <p>Financial security with guaranteed, timely payments for farmers.</p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fa-light fa-microchip-ai"></i>
+                <h3>AI-Powered Forecasting</h3>
+                <p>Predictive tools to help plan crops based on soil, weather, and demand.</p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Cooperative Farming</h3>
+                <p>Farmers can pool resources for better productivity and efficiency.</p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fa-sharp-duotone fa-solid fa-store"></i>
+                <h3>Ecommerce Portal</h3>
+                <p>Investors can support farmers by funding projects for a share of the harvest.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Flowchart-->
+    <div class="container">
+        <h2>Concept Flow</h2>
+        <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\flow3.png" class="flowimg">
+    </div>
+
+    <!-- Portal Information Section -->
+    <div class="container">
+        <h2>Our Portals</h2>
+        <div class="portals">
+            <div class="portal">
+                <h3>Farmer Portal</h3>
+                <p>Manage farm operations, track growth cycles, and access market prices.</p>
+                <button onclick="openModal('farmerModal')">Learn More</button>
+            </div>
+
+            <div class="portal">
+                <h3>Company/Business Portal</h3>
+                <p>Seamlessly connect with farmers and ensure timely delivery of produce.</p>
+                <button onclick="openModal('businessModal')">Learn More</button>
+            </div>
+
+            <div class="portal">
+                <h3>Wholesaler Portal</h3>
+                <p>Fund farming projects and receive a share of the harvest profits.</p>
+                <button onclick="openModal('wholesalerModal')">Learn More</button>
+            </div>
+
+            <div class="portal">
+                <h3>Ecommerce Portal</h3>
+                <p>Sell your farm produce directly to consumers with our ecommerce platform.</p>
+                <button onclick="openModal('ecommerceModal')">Learn More</button>
+            </div>
+
+            <div class="portal">
+                <h3>E-learn Portal</h3>
+                <p>Access training materials and agricultural courses for better yield.</p>
+                <button onclick="openModal('elearnModal')">Learn More</button>
+            </div>
+
+            <div class="portal">
+                <h3>Mitra Portal</h3>
+                <p>Collaborate with fellow farmers and share best practices for success.</p>
+                <button onclick="openModal('mitraModal')">Learn More</button>
+            </div>
+
+            <div class="portal">
+                <h3>Services Portal</h3>
+                <p>Access essential services like loans, equipment rental, and more.</p>
+                <button onclick="openModal('servicesModal')">Learn More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="farmerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('farmerModal')">&times;</span>
+            <div class="modal-header">Farmer Portal</div>
+            <div class="modal-body">
+                <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\f1.png">
+
+                <ul>
+                    <li>Manage all your farm operations efficiently</li>
+                    <li>Track crop growth cycles</li>
+                    <li>Access live market prices</li>
+                    <li>Get recommendations to improve your yield</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Business Modal -->
+    <div id="businessModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('businessModal')">&times;</span>
+            <div class="modal-header">Company/Business Portal</div>
+            <div class="modal-body">
+                <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\f2.png">
+
+                <ul>
+                    <li>Connect seamlessly with farmers</li>
+                    <li>Monitor quality from sowing to harvest</li>
+                    <li>Ensure timely delivery of produce</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wholesaler Modal -->
+    <div id="wholesalerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('wholesalerModal')">&times;</span>
+            <div class="modal-header">Wholesaler Portal</div>
+            <div class="modal-body">
+                <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\f3.png">
+                <ul>
+                    <li>Fund farming projects</li>
+                    <li>Receive a share of the harvest profits</li>
+                    <li>Track farm progress</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ecommerce Modal -->
+    <div id="ecommerceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ecommerceModal')">&times;</span>
+            <div class="modal-header">Ecommerce Portal</div>
+            <div class="modal-body">
+                <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\f7.png">
+
+                <ul>
+                    <li>Sell produce directly to consumers</li>
+                    <li>Eliminate the middleman</li>
+                    <li>Control your sales and pricing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-learn Modal -->
+    <div id="elearnModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('elearnModal')">&times;</span>
+            <div class="modal-header">E-learn Portal</div>
+            <div class="modal-body">
+                <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\f4.png">
+
+                <ul>
+                    <li>Access training materials and courses</li>
+                    <li>Learn best practices for farming</li>
+                    <li>Improve farming operations</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mitra Modal -->
+    <div id="mitraModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('mitraModal')">&times;</span>
+            <div class="modal-header">Mitra Portal</div>
+            <div class="modal-body">
+                <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\f5.png">
+
+                <ul>
+                    <li>Collaborate with fellow farmers</li>
+                    <li>Share resources and knowledge</li>
+                    <li>Exchange best practices</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Modal -->
+    <div id="servicesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('servicesModal')">&times;</span>
+            <div class="modal-header">Services Portal</div>
+            <div class="modal-body">
+                <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\f6.png">
+
+                <ul>
+                    <li>Access loans for farm expansion</li>
+                    <li>Rent farm equipment</li>
+                    <li>Use essential services to grow your farm</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Our Prototype</h2>
+        <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\pr1.png" class="prototype">
+        <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\pr2.png" class="prototype">
+        <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\pr3.png"class="prototype">
+        <img src="C:\Users\sneha\OneDrive\Desktop\Krishi Setu\images\pr4.png"class="prototype">
+    </div>
+
+    <div class="container">
+        <h2>Advanced Unique features</h2>
+        <ul>
+            <li>AI-Driven Crop Recommendations:
+                <p>Utilize AI algorithms that analyze soil quality, weather data, and market demand to suggest the best
+                    crops for farmers to grow. This ensures farmers select the most profitable and sustainable crops,
+                    increasing contract value.
+                </p>
+            </li>
+            <li>Dynamic Contract Templates:
+                <p>
+                    Offering customizable contract templates for different types of farming agreements (e.g., organic
+                    farming, poultry farming, dairy, etc.) to ensure flexibility. Legal compliance tools will be
+                    integrated for easier contract creation and management.
+                </p>
+            </li>
+            <li>Predictive Yield and Demand Forecasting:
+                <p>
+                    Useing AI and machine learning to predict crop yields and upcoming market demand. This information
+                    helps buyers plan purchases in advance and allows farmers to better negotiate contracts.
+                </p>
+            </li>
+            <li>
+                Blockchain-Based Contract Management:
+                <p>
+                    Securing all contracts using blockchain technology to ensure transparency, immutability, and trust
+                    between farmers and buyers. This would ensure that the contracts can’t be altered once agreed upon.
+                </p>
+            </li>
+            <li>Real-Time Supply Chain Tracking:
+                <p>
+                    Included GPS-based tracking for produce in transit, ensuring both buyers and farmers can monitor the
+                    status and delivery timeline of the goods. This increases trust and reliability for the buyers.
+                </p>
+            </li>
+            <li>Payment Guarantee through Escrow:
+                <p>
+                    Integrating an escrow payment system where funds from buyers are held in escrow until the farmer
+                    fulfills the contract. This guarantees timely and secure payments, reducing risks for both parties.
+
+                </p>
+            </li>
+            <li>
+                Farmer Insurance Integration:
+                <p>
+                    Providing crop insurance options directly on the platform. Farmers can purchase insurance against
+                    natural calamities or crop failures, providing further financial security.
+
+                </p>
+            </li>
+            <li>
+                Bulk Input Purchasing Deals:<p>
+                    The platform will negotiate bulk deals with suppliers of seeds, fertilizers, and equipment, offering
+                    discounts to farmers who purchase inputs collectively. This can reduce their upfront investment.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 KrishiSetu. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Function to open modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Function to close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside the modal
+        window.onclick = function (event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+
+</html>
